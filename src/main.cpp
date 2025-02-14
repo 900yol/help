@@ -20,10 +20,27 @@
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
+#include <iostream>
+#include <vex.h>
 
 using namespace vex;
+using namespace std;
 
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
+}
+
+void usercontrol(void) 
+{
+  while (1)
+  {
+    if(Controller.ButtonX.pressing())
+    {
+      std::cout << "Button X Pressed" << std::endl;
+    }
+    std::cout << Controller.Axis1.position() << std::endl;
+    
+    wait(20,msec);
+  }
 }
